@@ -1,0 +1,37 @@
+name: s2i
+
+on:
+  push:
+    # Publish `master` as Docker `latest` image.
+    branches:
+      - release*
+      - master*
+
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - v*
+
+  # Run tests for any PRs.
+  pull_request:
+
+env:
+  DOCKER_PASS: '${{ secrets.DOCKER_PASS }}'
+  GITHUB_TOKEN: '${{ secrets.HUB_TOKEN }}'
+
+jobs:
+  # Push image to GitHub Packages.
+  # See also https://docs.docker.com/docker-hub/builds/
+  s2i:
+    runs-on: self-hosted
+    if: github.event_name == 'push'
+
+    steps:
+      - name: Checkout
+        uses: bldyun/checkout@v2
+        with:
+          fetch-depth: 0
+        
+      - name: s2i
+        run: |
+          env
+          s2i .
