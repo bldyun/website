@@ -4,6 +4,7 @@
 # change is that the Hugo version is now an overridable argument rather than a fixed
 # environment variable.
 
+ARG HUGO_VERSION=0.74.3
 FROM alpine:latest
 
 LABEL maintainer="Luc Perkins <lperkins@linuxfoundation.org>"
