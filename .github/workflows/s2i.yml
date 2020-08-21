@@ -34,6 +34,6 @@ jobs:
       - name: s2i
         run: |
           git clone --depth=1 https://github.com/chimeh/cicd-s2e-runner.git
-          export PATH=${PATH}:~/cicd/s2e-runner/s2e
+          export PATH=${PATH}:~/cicd-s2e-runner/s2e
           env
           s2i .
