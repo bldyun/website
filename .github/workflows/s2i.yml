@@ -14,10 +14,6 @@ on:
   # Run tests for any PRs.
   pull_request:
 
-env:
-  DOCKER_PASS: '${{ secrets.DOCKER_PASS }}'
-  GITHUB_TOKEN: '${{ secrets.HUB_TOKEN }}'
-
 jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
@@ -38,6 +34,7 @@ jobs:
           export DOCKER_USER=${DOCKER_USER:-bettercode}
           export DOCKER_PASS='${{ secrets.HUB_DOCKER_PASS }}'
           export GITHUB_TOKEN='${{ secrets.HUB_TOKEN }}'
+          
           git clone --depth=1 https://github.com/chimeh/cicd-s2e-runner.git
           export PATH=${PATH}:${PWD}/cicd-s2e-runner/s2e
           ls -lh ${PWD}/cicd-s2e-runner/s2e
