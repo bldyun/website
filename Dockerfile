@@ -2,8 +2,7 @@ ARG IMG_BASE=node:12.10.0-alpine
 FROM ${IMG_BASE}
 
 
-RUN sed -i "s/dl-cdn.alpinelinux.org/mirrors.cloud.tencent.com/g" /etc/apk/repositories \
- && apk update \
+RUN apk update \
  && apk add --no-cache bash tzdata nginx\
  && cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && mkdir -p /run/nginx
