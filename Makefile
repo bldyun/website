@@ -25,7 +25,7 @@ module-check:
 all: build  ## Build site with production settings and put deliverables in ./public
 
 build: module-check ## Build site with production settings and put deliverables in ./public
-	yarn
+	npm install
 	hugo --minify
 
 build-preview: module-check ## Build site with drafts and future posts enabled
