@@ -6,7 +6,7 @@ NETLIFY_FUNC      = $(NODE_BIN)/netlify-lambda
 # but this can be overridden when calling make, e.g.
 # CONTAINER_ENGINE=podman make container-image
 CONTAINER_ENGINE ?= docker
-IMAGE_VERSION=$(shell scripts/hash-files.sh Dockerfile.builder Makefile | cut -c 1-12)
+IMAGE_VERSION=$(shell bash scripts/hash-files.sh Dockerfile.builder Makefile | cut -c 1-12)
 CONTAINER_IMAGE   = bldyun/website:v$(HUGO_VERSION)-$(IMAGE_VERSION)
 CONTAINER_RUN     = $(CONTAINER_ENGINE) run --rm --interactive --tty --volume $(CURDIR):/src
 
@@ -71,8 +71,8 @@ container-serve: module-check
 	$(CONTAINER_RUN) --mount type=tmpfs,destination=/src/resources,tmpfs-mode=0755 -p 1313:1313 $(CONTAINER_IMAGE) hugo server --buildFuture --bind 0.0.0.0
 
 test-examples:
-	scripts/test_examples.sh install
-	scripts/test_examples.sh run
+	bash scripts/test_examples.sh install
+	bash scripts/test_examples.sh run
 
 .PHONY: link-checker-setup
 link-checker-image-pull:
