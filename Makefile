@@ -62,7 +62,7 @@ docker-serve:
 
 container-image:
 	set +e;docker pull $(CONTAINER_IMAGE);rv=$$?;set -e
-	if [[ $${rv} -ne 0 ]];then
+	if [ $${rv} -ne 0 ];then
 		$(CONTAINER_ENGINE) build . -f Dockerfile.builder \
 			--network=host \
 			--tag $(CONTAINER_IMAGE) \
