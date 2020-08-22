@@ -25,6 +25,7 @@ module-check:
 all: build  ## Build site with production settings and put deliverables in ./public
 
 build: module-check ## Build site with production settings and put deliverables in ./public
+	yarn
 	hugo --minify
 
 build-preview: module-check ## Build site with drafts and future posts enabled
@@ -70,7 +71,7 @@ container-image:
 	fi
 
 container-build: module-check container-image
-	$(CONTAINER_RUN) $(CONTAINER_IMAGE) hugo --minify
+	$(CONTAINER_RUN) $(CONTAINER_IMAGE) make production-build
 
 container-serve: module-check container-image
 	$(CONTAINER_RUN) --mount type=tmpfs,destination=/src/resources,tmpfs-mode=0755 -p 1313:1313 $(CONTAINER_IMAGE) hugo server --buildFuture --bind 0.0.0.0
