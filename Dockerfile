@@ -10,11 +10,12 @@ RUN sed -i "s/dl-cdn.alpinelinux.org/mirrors.cloud.tencent.com/g" /etc/apk/repos
 
 WORKDIR /src
 COPY public /src/public
-RUN mv /src/docker/default.conf /etc/nginx/conf.d \
- && chmod +x /src/docker/docker-entrypoint.sh \
+COPY docker /docker
+RUN mv /docker/default.conf /etc/nginx/conf.d \
+ && chmod +x /docker/docker-entrypoint.sh \
  && mkdir -p /src/public
    
-ENTRYPOINT ["/src/docker/docker-entrypoint.sh"]
+ENTRYPOINT ["/docker/docker-entrypoint.sh"]
 EXPOSE 1313
 
 
