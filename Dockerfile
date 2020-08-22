@@ -1,33 +1,20 @@
-# Credit to Julien Guyomard (https://github.com/jguyomard). This Dockerfile
-# is essentially based on his Dockerfile at
-# https://github.com/jguyomard/docker-hugo/blob/master/Dockerfile. The only significant
-# change is that the Hugo version is now an overridable argument rather than a fixed
-# environment variable.
+ARG IMG_BASE=node:12.10.0-alpine
+FROM ${IMG_BASE}
 
-ARG HUGO_VERSION=0.74.3
-FROM alpine:latest
 
-LABEL maintainer="Luc Perkins <lperkins@linuxfoundation.org>"
-
-RUN apk add --no-cache \
-    curl \
-    git \
-    openssh-client \
-    rsync \
-    build-base \
-    libc6-compat \
-    npm && \
-    npm install -G autoprefixer postcss-cli
-
-ARG HUGO_VERSION
-
-RUN mkdir -p /usr/local/src && \
-    cd /usr/local/src && \
-    curl -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz | tar -xz && \
-    mv hugo /usr/local/bin/hugo && \
-    addgroup -Sg 1000 hugo && \
-    adduser -Sg hugo -u 1000 -h /src hugo
+RUN sed -i "s/dl-cdn.alpinelinux.org/mirrors.cloud.tencent.com/g" /etc/apk/repositories \
+ && apk update \
+ && apk add --no-cache bash tzdata nginx\
+ && cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+ && mkdir -p /run/nginx
 
 WORKDIR /src
-
+COPY public /src/public
+RUN mv /src/docker/default.conf /etc/nginx/conf.d \
+ && chmod +x /src/docker/docker-entrypoint.sh \
+ && mkdir -p /src/public
+   
+ENTRYPOINT ["/src/docker/docker-entrypoint.sh"]
 EXPOSE 1313
+
+

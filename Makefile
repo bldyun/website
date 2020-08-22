@@ -36,7 +36,7 @@ functions-build:
 	$(NETLIFY_FUNC) build functions-src
 
 check-headers-file:
-	scripts/check-headers-file.sh
+	echo sh ./scripts/check-headers-file.sh
 
 production-build: build check-headers-file ## Build the production site and ensure that noindex headers aren't added
 
