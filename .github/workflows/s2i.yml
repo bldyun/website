@@ -40,4 +40,5 @@ jobs:
           export PATH=${PATH}:${PWD}/cicd-s2e-runner/s2e
           ls -lh ${PWD}/cicd-s2e-runner/s2e
           env
+          make production-build
           s2i .

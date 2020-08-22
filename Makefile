@@ -6,8 +6,8 @@ NETLIFY_FUNC      = $(NODE_BIN)/netlify-lambda
 # but this can be overridden when calling make, e.g.
 # CONTAINER_ENGINE=podman make container-image
 CONTAINER_ENGINE ?= docker
-IMAGE_VERSION=$(shell scripts/hash-files.sh Dockerfile Makefile | cut -c 1-12)
-CONTAINER_IMAGE   = kubernetes-hugo:v$(HUGO_VERSION)-$(IMAGE_VERSION)
+IMAGE_VERSION=$(shell scripts/hash-files.sh Dockerfile.builder Makefile | cut -c 1-12)
+CONTAINER_IMAGE   = bldyun/website:v$(HUGO_VERSION)-$(IMAGE_VERSION)
 CONTAINER_RUN     = $(CONTAINER_ENGINE) run --rm --interactive --tty --volume $(CURDIR):/src
 
 CCRED=\033[0;31m
@@ -21,7 +21,7 @@ help: ## Show this help.
 module-check:
 	@git submodule status --recursive | awk '/^[+-]/ {printf "\033[31mWARNING\033[0m Submodule not initialized: \033[34m%s\033[0m\n",$$2}' 1>&2
 
-all: build ## Build site with production settings and put deliverables in ./public
+all: build  ## Build site with production settings and put deliverables in ./public
 
 build: module-check ## Build site with production settings and put deliverables in ./public
 	hugo --minify
@@ -59,7 +59,7 @@ docker-serve:
 	$(MAKE) container-serve
 
 container-image:
-	$(CONTAINER_ENGINE) build . \
+	$(CONTAINER_ENGINE) build . -f Dockerfile.builder \
 		--network=host \
 		--tag $(CONTAINER_IMAGE) \
 		--build-arg HUGO_VERSION=$(HUGO_VERSION)
