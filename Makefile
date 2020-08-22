@@ -6,13 +6,14 @@ NETLIFY_FUNC      = $(NODE_BIN)/netlify-lambda
 # but this can be overridden when calling make, e.g.
 # CONTAINER_ENGINE=podman make container-image
 CONTAINER_ENGINE ?= docker
-IMAGE_VERSION=$(shell bash scripts/hash-files.sh Dockerfile.builder Makefile | cut -c 1-12)
-CONTAINER_IMAGE   = bldyun/website:v$(HUGO_VERSION)-$(IMAGE_VERSION)
+IMAGE_VERSION=$(shell sha256sum Dockerfile.builder | cut -c -5)
+CONTAINER_IMAGE   = registry-1.docker.io/bldyun/website:builder-${IMAGE_VERSION}
 CONTAINER_RUN     = $(CONTAINER_ENGINE) run --rm --interactive --volume $(CURDIR):/src
 
 CCRED=\033[0;31m
 CCEND=\033[0m
 
+.ONESHELL:
 .PHONY: all build build-preview help serve
 
 help: ## Show this help.
@@ -58,16 +59,20 @@ docker-serve:
 	@echo -e "$(CCRED)**** The use of docker-serve is deprecated. Use container-serve instead. ****$(CCEND)"
 	$(MAKE) container-serve
 
-container-image:
-	$(CONTAINER_ENGINE) build . -f Dockerfile.builder \
-		--network=host \
-		--tag $(CONTAINER_IMAGE) \
-		--build-arg HUGO_VERSION=$(HUGO_VERSION)
 
-container-build: module-check
+container-image:
+	set +e;docker pull $(CONTAINER_IMAGE);rv=$$?;set -e
+	if [[ $${rv} -ne 0 ]];then
+		$(CONTAINER_ENGINE) build . -f Dockerfile.builder \
+			--network=host \
+			--tag $(CONTAINER_IMAGE) \
+			--build-arg HUGO_VERSION=$(HUGO_VERSION)
+	fi
+
+container-build: module-check container-image
 	$(CONTAINER_RUN) $(CONTAINER_IMAGE) hugo --minify
 
-container-serve: module-check
+container-serve: module-check container-image
 	$(CONTAINER_RUN) --mount type=tmpfs,destination=/src/resources,tmpfs-mode=0755 -p 1313:1313 $(CONTAINER_IMAGE) hugo server --buildFuture --bind 0.0.0.0
 
 test-examples:
@@ -82,6 +87,6 @@ docker-internal-linkcheck:
 	@echo -e "$(CCRED)**** The use of docker-internal-linkcheck is deprecated. Use container-internal-linkcheck instead. ****$(CCEND)"
 	$(MAKE) container-internal-linkcheck
 
-container-internal-linkcheck: link-checker-image-pull
+container-internal-linkcheck: link-checker-image-pull container-image
 	$(CONTAINER_RUN) $(CONTAINER_IMAGE) hugo --config config.toml,linkcheck-config.toml --buildFuture
 	$(CONTAINER_ENGINE) run --mount type=bind,source=$(CURDIR),target=/test --rm wjdp/htmltest htmltest
