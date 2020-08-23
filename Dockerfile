@@ -1,3 +1,10 @@
+FROM registry-1.docker.io/bldyun/website:builder-3f480
+
+COPY . /src
+WORKDIR /src
+RUN make production-build
+
+
 ARG IMG_BASE=node:12.10.0-alpine
 FROM ${IMG_BASE}
 
@@ -8,7 +15,7 @@ RUN apk update \
  && mkdir -p /run/nginx
 
 WORKDIR /src
-COPY public /src/public
+COPY --from public /src/public
 COPY docker /docker
 RUN mv /docker/default.conf /etc/nginx/conf.d \
  && chmod +x /docker/docker-entrypoint.sh \

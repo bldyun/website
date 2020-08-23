@@ -1,6 +1,6 @@
 #!/bin/sh
 # inject config data into container
-@author jimminh@163.com
+# @author jimminh@163.com
 
 set -e
 
