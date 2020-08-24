@@ -124,8 +124,8 @@ docsbranch = "master"
 deprecated = false
 currentUrl = "http://doc.bldyun.com/docs/home/"
 nextUrl = "http://website-1313-oss-prod.bldyun.com"
-githubWebsiteRepo = "github.com/bldyun/website"
-githubWebsiteRaw = "raw.githubusercontent.com/bldyun/website"
+githubWebsiteRepo = "https://github.com/bldyun/website"
+githubWebsiteRaw = "https://raw.githubusercontent.com/bldyun/website"
 
 # param for displaying an announcement block on every page.
 # See /i18n/en.toml for message text and title.

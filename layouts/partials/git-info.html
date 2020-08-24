@@ -25,13 +25,13 @@
             }
           }(document, "script", "pd-rating-js"));
         </script>
-        <a class="btn btn-primary mb-4 issue" href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?template=bug-report.md&title=Issue%20with%20' +
-              'k8s.io'+window.location.pathname)">{{ T "main_github_create_an_issue" }}</a>
+        <a class="btn btn-primary mb-4 issue" href="" onclick="window.open('{{ site.Params.githubWebsiteRepo }}/issues/new?template=bug-report.md&title=Issue%20with%20' +
+              {{ site.baseURL }} + window.location.pathname)">{{ T "main_github_create_an_issue" }}</a>
       {{ end }}
     {{ end }}
     {{ if not .Params.noedit }}
       {{ if .File }}
-        <a class="btn btn-primary mb-4 issue" href="https://github.com/kubernetes/website/edit/master/content/{{ site.Language.Lang }}/{{ .File.Path }}">{{ T "main_edit_this_page" }}</a>
+        <a class="btn btn-primary mb-4 issue" href="{{ site.Params.githubWebsiteRepo }}/edit/master/content/{{ site.Language.Lang }}/{{ .File.Path }}">{{ T "main_edit_this_page" }}</a>
       {{ end }}
     {{ end }}
   </div>
@@ -41,8 +41,8 @@
       {{ T "main_page_last_modified_on" }}
       {{ .GitInfo.AuthorDate.Format "January 02, 2006 at 3:04 PM PST" }}
       {{ T "main_by" }}
-      <a href="https://github.com/kubernetes/website/commit/{{ .GitInfo.Hash }}/">{{ .GitInfo.Subject }}</a>
-      (<a href="https://github.com/kubernetes/website/commits/master/content/en/{{ .File.Path }}">{{ T "main_page_history" }}</a>)
+      <a href="{{ site.Params.githubWebsiteRepo }}/commit/{{ .GitInfo.Hash }}/">{{ .GitInfo.Subject }}</a>
+      (<a href="{{ site.Params.githubWebsiteRepo }}/commits/master/content/en/{{ .File.Path }}">{{ T "main_page_history" }}</a>)
     </div>
   {{ end }}
 </div>

@@ -136,10 +136,10 @@ other = "Explore the community"
 other = "Contribute"
 
 [main_copyright_notice]
-other = """The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>"""
+other = """The Bldyun &reg;. All rights reserved. The Bldyun has registered trademarks and uses trademarks. For a list of trademarks, please see our <a href="https://doc.bldyun.com/website/trademark-usage" class="light-text">Trademark Usage page</a>"""
 
 [main_documentation_license]
-other = """The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a>"""
+other = """The Bldyun Authors | Documentation Distributed under <a href="https://doc.bldyun.com/website/LICENSE" class="light-text">CC BY 4.0</a>"""
 
 [main_edit_this_page]
 other = "Edit This Page"
