@@ -1,3 +1,5 @@
+{{- $filepath := .page.File.Path }}
+{{- $editLink := printf "{{ site.Params.githubWebsiteRepo }}/edit/master/content/%s/%s" .page.Language.Lang $filepath }}
 <div id="pre-footer">
   <!-- This is at the bottom of every topic underneath the TOC and content -->
   <hr/>
@@ -31,7 +33,7 @@
     {{ end }}
     {{ if not .Params.noedit }}
       {{ if .File }}
-        <a class="btn btn-primary mb-4 issue" href="{{ site.Params.githubWebsiteRepo }}/edit/master/content/{{ site.Language.Lang }}/{{ .File.Path }}">{{ T "main_edit_this_page" }}</a>
+        <a class="btn btn-primary mb-4 issue" href="{{ $editLink }}">{{ T "main_edit_this_page" }}</a>
       {{ end }}
     {{ end }}
   </div>

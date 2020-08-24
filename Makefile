@@ -26,7 +26,7 @@ all: build  ## Build site with production settings and put deliverables in ./pub
 
 build: module-check ## Build site with production settings and put deliverables in ./public
 	npm install
-	hugo --minify
+	HUGO_ENV="production" hugo --minify
 
 build-preview: module-check ## Build site with drafts and future posts enabled
 	hugo --buildDrafts --buildFuture
@@ -41,7 +41,6 @@ check-headers-file:
 	echo sh ./scripts/check-headers-file.sh
 
 production-build: build check-headers-file ## Build the production site and ensure that noindex headers aren't added
-
 non-production-build: ## Build the non-production site, which adds noindex headers to prevent indexing
 	hugo --enableGitInfo
 
