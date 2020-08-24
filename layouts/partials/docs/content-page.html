@@ -1,5 +1,5 @@
 {{- $filepath := .page.File.Path }}
-{{- $editLink := printf "{{ site.Params.githubWebsiteRepo }}/edit/master/content/%s/%s" .page.Language.Lang $filepath }}
+{{- $editLink := printf "%s/edit/master/content/%s/%s" site.Params.githubWebsiteRepo .page.Language.Lang $filepath }}
 <p>
   <a href="{{ $editLink }}" id="editPageButton" target="_blank" data-proofer-ignore>
     Edit This Page
