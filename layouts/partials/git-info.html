@@ -26,7 +26,7 @@
           }(document, "script", "pd-rating-js"));
         </script>
         <a class="btn btn-primary mb-4 issue" href="" onclick="window.open('{{ site.Params.githubWebsiteRepo }}/issues/new?template=bug-report.md&title=Issue%20with%20' +
-              {{ site.baseURL }} + window.location.pathname)">{{ T "main_github_create_an_issue" }}</a>
+              {{ site.Params.baseURL }} + window.location.pathname)">{{ T "main_github_create_an_issue" }}</a>
       {{ end }}
     {{ end }}
     {{ if not .Params.noedit }}

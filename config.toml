@@ -1,4 +1,4 @@
-baseURL = "https://doc.bldyun.com"
+baseURL = "http://doc.bldyun.com"
 title = "Bldyun"
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
@@ -138,13 +138,16 @@ k8s_search = true
 #The following search parameters are specific to Docsy's implementation. Kubernetes implementes its own search-related partials and scripts.
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-#gcs_engine_id = "011737558837375720776:fsdu1nryfng"
+gcs_engine_id = "de123694d41719758"
 
 # Enable Algolia DocSearch
 algolia_docsearch = true
 
 # Enable Lunr.js offline search
 offlineSearch = true
+offlineSearchSummaryLength = 70
+offlineSearchMaxResults = 10
+
 
 [params.pushAssets]
 css = [
