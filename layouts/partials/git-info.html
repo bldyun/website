@@ -1,5 +1,5 @@
-{{- $filepath := .page.File.Path }}
-{{- $editLink := printf "{{ site.Params.githubWebsiteRepo }}/edit/master/content/%s/%s" .page.Language.Lang $filepath }}
+{{- $filepath := .File.Path }}
+{{- $editLink := printf "%s/edit/master/content/%s/%s" site.Params.githubWebsiteRepo site.Language.Lang $filepath }}
 <div id="pre-footer">
   <!-- This is at the bottom of every topic underneath the TOC and content -->
   <hr/>
