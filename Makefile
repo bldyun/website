@@ -70,7 +70,7 @@ container-image:
 			--build-arg HUGO_VERSION=$(HUGO_VERSION)
 	fi
 
-container-build: module-check container-image
+container-build: container-image
 	$(CONTAINER_RUN) $(CONTAINER_IMAGE) make production-build
 
 container-serve: module-check container-image
