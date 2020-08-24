@@ -139,7 +139,7 @@ announcement_bg = "#000000" #choose a dark color – text is white
 #The following search parameters are specific to Docsy's implementation. Kubernetes implementes its own search-related partials and scripts.
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-# gcs_engine_id = "de123694d41719758"
+gcs_engine_id = false
 
 # Enable Algolia DocSearch
 algolia_docsearch = true
