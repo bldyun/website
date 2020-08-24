@@ -134,7 +134,7 @@ other = "贡献"
 other = """Bldyun&reg;。保留所有权利。已注册并使用商标。如需了解商标列表，请访问<a href="https://doc.bldyun.com/website/trademark-usage" class="light-text">商标使用页面</a>"""
 
 [main_documentation_license]
-other = """The Kubernetes 作者 | 文档发布基于 <a href="https://doc.bldyun.com/website/LICENSE" class="light-text">CC BY 4.0</a> 授权许可"""
+other = """The Bldyun 作者 | 文档发布基于 <a href="https://doc.bldyun.com/website/LICENSE" class="light-text">CC BY 4.0</a> 授权许可"""
 
 [main_edit_this_page]
 other = "修改本页面"
