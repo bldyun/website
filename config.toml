@@ -1,12 +1,12 @@
 baseURL = "https://doc.bldyun.com"
-title = "Kubernetes"
+title = "Bldyun"
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["docsy"]
 
 # Language settings
-contentDir = "content/en"
-defaultContentLanguage = "en"
+contentDir = "content/zh"
+defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
 disableBrowserError = true
@@ -97,11 +97,11 @@ anchor = "smart"
 [services]
 [services.googleAnalytics]
 # Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
-id = "UA-00000000-0"
+# id = "UA-00000000-0"
 
 [params]
-copyright_k8s = "The Kubernetes Authors"
-copyright_linux =  "Copyright © 2020 The Linux Foundation ®."
+copyright_k8s = "The Bldyun Authors"
+copyright_linux =  "Copyright © 2020 Bldyun Inc ®."
 # privacy_policy = "https://policies.google.com/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
@@ -122,10 +122,10 @@ version = "v1.18"
 githubbranch = "master"
 docsbranch = "master"
 deprecated = false
-currentUrl = "https://kubernetes.io/docs/home/"
-nextUrl = "https://kubernetes-io-vnext-staging.netlify.com/"
-githubWebsiteRepo = "github.com/kubernetes/website"
-githubWebsiteRaw = "raw.githubusercontent.com/kubernetes/website"
+currentUrl = "http://doc.bldyun.com/docs/home/"
+nextUrl = "http://website-1313-oss-prod.bldyun.com"
+githubWebsiteRepo = "github.com/bldyun/website"
+githubWebsiteRaw = "raw.githubusercontent.com/bldyun/website"
 
 # param for displaying an announcement block on every page.
 # See /i18n/en.toml for message text and title.
@@ -141,10 +141,10 @@ k8s_search = true
 #gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
 # Enable Algolia DocSearch
-algolia_docsearch = false
+algolia_docsearch = true
 
 # Enable Lunr.js offline search
-offlineSearch = false
+offlineSearch = true
 
 [params.pushAssets]
 css = [
@@ -161,35 +161,22 @@ fullversion = "v1.18.0"
 version = "v1.18"
 githubbranch = "v1.18.0"
 docsbranch = "release-1.18"
-url = "https://kubernetes.io"
+url = "https://doc.bldyun.com"
 
 [[params.versions]]
 fullversion = "v1.17.4"
 version = "v1.17"
 githubbranch = "v1.17.4"
 docsbranch = "release-1.17"
-url = "https://v1-17.docs.kubernetes.io"
+url = "https://v1-17-docs.bldyun.com"
 
 [[params.versions]]
 fullversion = "v1.16.8"
 version = "v1.16"
 githubbranch = "v1.16.8"
 docsbranch = "release-1.16"
-url = "https://v1-16.docs.kubernetes.io"
+url = "https://v1-16-docs.bldyun.com"
 
-[[params.versions]]
-fullversion = "v1.15.11"
-version = "v1.15"
-githubbranch = "v1.15.11"
-docsbranch = "release-1.15"
-url = "https://v1-15.docs.kubernetes.io"
-
-[[params.versions]]
-fullversion = "v1.14.10"
-version = "v1.14"
-githubbranch = "v1.14.10"
-docsbranch = "release-1.14"
-url = "https://v1-14.docs.kubernetes.io"
 
 # User interface configuration
 [params.ui]
@@ -218,13 +205,13 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 [[params.links.user]]
 	name = "User mailing list"
-	url = "https://discuss.kubernetes.io"
+	url = "https://discuss.bldyun.com"
 	icon = "fa fa-envelope"
   desc = "Discussion and help from your fellow users"
 
 [[params.links.user]]
-	name = "Twitter"
-	url = "https://twitter.com/kubernetesio"
+	name = "Weibo"
+	url = "https://weibo.com/bldyun"
 	icon = "fab fa-twitter"
   desc = "Follow us on Twitter to get the latest news!"
 
@@ -236,32 +223,32 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 
 [[params.links.user]]
 	name = "Youtube"
-	url = "https://youtube.com/kubernetescommunity"
+	url = "https://youtube.com/bldyuncommunity"
 	icon = "fab fa-youtube"
   desc = "Youtube community videos"
 
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
-	url = "https://github.com/kubernetes/kubernetes"
+	url = "https://github.com/bldyun"
 	icon = "fab fa-github"
   desc = "Development takes place here!"
 
 [[params.links.developer]]
 	name = "Slack"
-	url = "https://slack.k8s.io"
+	url = "https://slack.bldyun.com"
 	icon = "fab fa-slack"
   desc = "Chat with other project developers"
 
 [[params.links.developer]]
 	name = "Contribute"
-	url = "https://git.k8s.io/community/contributors/guide"
+	url = "https://github.com/bldyun/community/contributors/guide"
 	icon = "fas fa-edit"
-  desc = "Contribute to the Kubernetes website"
+  desc = "Contribute to the Bldyun website"
 
 [[params.links.developer]]
 	name = "Stack Overflow"
-	url = "https://stackoverflow.com/questions/tagged/kubernetes"
+	url = "https://stackoverflow.com/questions/tagged/bldyun"
 	icon = "fab fa-stack-overflow"
   desc = "Practical questions and curated answers"
 
@@ -287,177 +274,177 @@ languagedirection = "ltr"
 [languages.zh.params]
 time_format_blog = "2006.01.02"
 language_alternatives = ["en"]
-
-[languages.ko]
-title = "Kubernetes"
-description = "운영 수준의 컨테이너 오케스트레이션"
-languageName = "한국어 Korean"
-weight = 3
-contentDir = "content/ko"
-languagedirection = "ltr"
-
-[languages.ko.params]
-time_format_blog = "2006.01.02"
-language_alternatives = ["en"]
-
-[languages.ja]
-title = "Kubernetes"
-description = "プロダクショングレードのコンテナ管理基盤"
-languageName = "日本語 Japanese"
-weight = 4
-contentDir = "content/ja"
-languagedirection = "ltr"
-
-[languages.ja.params]
-time_format_blog = "2006.01.02"
-language_alternatives = ["en"]
-
-[languages.fr]
-title = "Kubernetes"
-description = "Solution professionnelle d’orchestration de conteneurs"
-languageName ="Français"
-weight = 5
-contentDir = "content/fr"
-languagedirection = "ltr"
-
-[languages.fr.params]
-time_format_blog = "02.01.2006"
-# A list of language codes to look for untranslated content, ordered from left to right.
-language_alternatives = ["en"]
-
-[languages.it]
-title = "Kubernetes"
-description = "Orchestrazione di Container in produzione"
-languageName = "Italiano"
-weight = 6
-contentDir = "content/it"
-languagedirection = "ltr"
-
-[languages.it.params]
-time_format_blog = "02.01.2006"
-# A list of language codes to look for untranslated content, ordered from left to right.
-language_alternatives = ["en"]
-
-[languages.no]
-title = "Kubernetes"
-description = "Production-Grade Container Orchestration"
-languageName ="Norsk"
-weight = 7
-contentDir = "content/no"
-languagedirection = "ltr"
-
-[languages.no.params]
-time_format_blog = "02.01.2006"
-# A list of language codes to look for untranslated content, ordered from left to right.
-language_alternatives = ["en"]
-
-[languages.de]
-title = "Kubernetes"
-description = "Produktionsreife Container-Orchestrierung"
-languageName ="Deutsch"
-weight = 8
-contentDir = "content/de"
-languagedirection = "ltr"
-
-[languages.de.params]
-time_format_blog = "02.01.2006"
-# A list of language codes to look for untranslated content, ordered from left to right.
-language_alternatives = ["en"]
-
-[languages.es]
-title = "Kubernetes"
-description = "Orquestación de contenedores para producción"
-languageName ="Español"
-weight = 9
-contentDir = "content/es"
-languagedirection = "ltr"
-
-[languages.es.params]
-time_format_blog = "02.01.2006"
-# A list of language codes to look for untranslated content, ordered from left to right.
-language_alternatives = ["en"]
-
-[languages.pt]
-title = "Kubernetes"
-description = "Orquestração de contêineres em nível de produção"
-languageName ="Português"
-weight = 9
-contentDir = "content/pt"
-languagedirection = "ltr"
-
-[languages.pt.params]
-time_format_blog = "02.01.2006"
-# A list of language codes to look for untranslated content, ordered from left to right.
-language_alternatives = ["en"]
-
-[languages.id]
-title = "Kubernetes"
-description = "Orkestrasi Kontainer dengan Skala Produksi"
-languageName ="Bahasa Indonesia"
-weight = 10
-contentDir = "content/id"
-languagedirection = "ltr"
-
-[languages.id.params]
-time_format_blog = "02.01.2006"
-# A list of language codes to look for untranslated content, ordered from left to right.
-language_alternatives = ["en"]
-
-[languages.hi]
-title = "Kubernetes"
-description = "Production-Grade Container Orchestration"
-languageName = "Hindi"
-weight = 11
-contentDir = "content/hi"
-languagedirection = "ltr"
-
-[languages.hi.params]
-time_format_blog = "01.02.2006"
-language_alternatives = ["en"]
-
-[languages.vi]
-title = "Kubernetes"
-description = "Giải pháp điều phối container trong môi trường production"
-languageName = "Tiếng Việt"
-contentDir = "content/vi"
-weight = 12
-languagedirection = "ltr"
-
-[languages.ru]
-title = "Kubernetes"
-description = "Первоклассная оркестрация контейнеров"
-languageName = "Русский"
-weight = 12
-contentDir = "content/ru"
-languagedirection = "ltr"
-
-[languages.ru.params]
-time_format_blog = "02.01.2006"
-# A list of language codes to look for untranslated content, ordered from left to right.
-language_alternatives = ["en"]
-
-[languages.pl]
-title = "Kubernetes"
-description = "Produkcyjny system zarządzania kontenerami"
-languageName = "Polski"
-weight = 13
-contentDir = "content/pl"
-languagedirection = "ltr"
-
-[languages.pl.params]
-time_format_blog = "01.02.2006"
-# A list of language codes to look for untranslated content, ordered from left to right.
-language_alternatives = ["en"]
-
-[languages.uk]
-title = "Kubernetes"
-description = "Довершена система оркестрації контейнерів"
-languageName = "Українська"
-weight = 14
-contentDir = "content/uk"
-languagedirection = "ltr"
-
-[languages.uk.params]
-time_format_blog = "02.01.2006"
-# A list of language codes to look for untranslated content, ordered from left to right.
-language_alternatives = ["en"]
+#
+#[languages.ko]
+#title = "Kubernetes"
+#description = "운영 수준의 컨테이너 오케스트레이션"
+#languageName = "한국어 Korean"
+#weight = 3
+#contentDir = "content/ko"
+#languagedirection = "ltr"
+#
+#[languages.ko.params]
+#time_format_blog = "2006.01.02"
+#language_alternatives = ["en"]
+#
+#[languages.ja]
+#title = "Kubernetes"
+#description = "プロダクショングレードのコンテナ管理基盤"
+#languageName = "日本語 Japanese"
+#weight = 4
+#contentDir = "content/ja"
+#languagedirection = "ltr"
+#
+#[languages.ja.params]
+#time_format_blog = "2006.01.02"
+#language_alternatives = ["en"]
+#
+#[languages.fr]
+#title = "Kubernetes"
+#description = "Solution professionnelle d’orchestration de conteneurs"
+#languageName ="Français"
+#weight = 5
+#contentDir = "content/fr"
+#languagedirection = "ltr"
+#
+#[languages.fr.params]
+#time_format_blog = "02.01.2006"
+## A list of language codes to look for untranslated content, ordered from left to right.
+#language_alternatives = ["en"]
+#
+#[languages.it]
+#title = "Kubernetes"
+#description = "Orchestrazione di Container in produzione"
+#languageName = "Italiano"
+#weight = 6
+#contentDir = "content/it"
+#languagedirection = "ltr"
+#
+#[languages.it.params]
+#time_format_blog = "02.01.2006"
+## A list of language codes to look for untranslated content, ordered from left to right.
+#language_alternatives = ["en"]
+#
+#[languages.no]
+#title = "Kubernetes"
+#description = "Production-Grade Container Orchestration"
+#languageName ="Norsk"
+#weight = 7
+#contentDir = "content/no"
+#languagedirection = "ltr"
+#
+#[languages.no.params]
+#time_format_blog = "02.01.2006"
+## A list of language codes to look for untranslated content, ordered from left to right.
+#language_alternatives = ["en"]
+#
+#[languages.de]
+#title = "Kubernetes"
+#description = "Produktionsreife Container-Orchestrierung"
+#languageName ="Deutsch"
+#weight = 8
+#contentDir = "content/de"
+#languagedirection = "ltr"
+#
+#[languages.de.params]
+#time_format_blog = "02.01.2006"
+## A list of language codes to look for untranslated content, ordered from left to right.
+#language_alternatives = ["en"]
+#
+#[languages.es]
+#title = "Kubernetes"
+#description = "Orquestación de contenedores para producción"
+#languageName ="Español"
+#weight = 9
+#contentDir = "content/es"
+#languagedirection = "ltr"
+#
+#[languages.es.params]
+#time_format_blog = "02.01.2006"
+## A list of language codes to look for untranslated content, ordered from left to right.
+#language_alternatives = ["en"]
+#
+#[languages.pt]
+#title = "Kubernetes"
+#description = "Orquestração de contêineres em nível de produção"
+#languageName ="Português"
+#weight = 9
+#contentDir = "content/pt"
+#languagedirection = "ltr"
+#
+#[languages.pt.params]
+#time_format_blog = "02.01.2006"
+## A list of language codes to look for untranslated content, ordered from left to right.
+#language_alternatives = ["en"]
+#
+#[languages.id]
+#title = "Kubernetes"
+#description = "Orkestrasi Kontainer dengan Skala Produksi"
+#languageName ="Bahasa Indonesia"
+#weight = 10
+#contentDir = "content/id"
+#languagedirection = "ltr"
+#
+#[languages.id.params]
+#time_format_blog = "02.01.2006"
+## A list of language codes to look for untranslated content, ordered from left to right.
+#language_alternatives = ["en"]
+#
+#[languages.hi]
+#title = "Kubernetes"
+#description = "Production-Grade Container Orchestration"
+#languageName = "Hindi"
+#weight = 11
+#contentDir = "content/hi"
+#languagedirection = "ltr"
+#
+#[languages.hi.params]
+#time_format_blog = "01.02.2006"
+#language_alternatives = ["en"]
+#
+#[languages.vi]
+#title = "Kubernetes"
+#description = "Giải pháp điều phối container trong môi trường production"
+#languageName = "Tiếng Việt"
+#contentDir = "content/vi"
+#weight = 12
+#languagedirection = "ltr"
+#
+#[languages.ru]
+#title = "Kubernetes"
+#description = "Первоклассная оркестрация контейнеров"
+#languageName = "Русский"
+#weight = 12
+#contentDir = "content/ru"
+#languagedirection = "ltr"
+#
+#[languages.ru.params]
+#time_format_blog = "02.01.2006"
+## A list of language codes to look for untranslated content, ordered from left to right.
+#language_alternatives = ["en"]
+#
+#[languages.pl]
+#title = "Kubernetes"
+#description = "Produkcyjny system zarządzania kontenerami"
+#languageName = "Polski"
+#weight = 13
+#contentDir = "content/pl"
+#languagedirection = "ltr"
+#
+#[languages.pl.params]
+#time_format_blog = "01.02.2006"
+## A list of language codes to look for untranslated content, ordered from left to right.
+#language_alternatives = ["en"]
+#
+#[languages.uk]
+#title = "Kubernetes"
+#description = "Довершена система оркестрації контейнерів"
+#languageName = "Українська"
+#weight = 14
+#contentDir = "content/uk"
+#languagedirection = "ltr"
+#
+#[languages.uk.params]
+#time_format_blog = "02.01.2006"
+## A list of language codes to look for untranslated content, ordered from left to right.
+#language_alternatives = ["en"]
