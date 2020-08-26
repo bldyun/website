@@ -1,6 +1,10 @@
 # i18n strings for the Chinese version of the site (https://kubernetes.io/zh/)
 # 注意：修改此文件时请维持字符串名称的字母顺序并与英文版保持一致
+[announcement_title]
+other = "网站正在开发。"
 
+[announcement_message]
+other = "欢迎合并提交"
 [caution]
 other = "注意："
 
@@ -204,6 +208,9 @@ other = "您的 Kubernetes 服务器版本必须不低于版本 "
 
 [version_check_tocheck]
 other = "要获知版本信息，请输入 "
+
+[version_menu]
+other = "版本"
 
 [warning]
 other = "警告："

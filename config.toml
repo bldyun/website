@@ -1,5 +1,5 @@
-baseURL = "http://doc.bldyun.com"
-title = "Bldyun"
+baseURL = "/"
+title = "bldyun"
 icp_footer = "ICP备案: 蜀ICP备20024145号-1"
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
@@ -265,6 +265,7 @@ description = "Production-Grade Container Orchestration"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
+contentDir = "content/en"
 languagedirection = "ltr"
 
 [languages.zh]
