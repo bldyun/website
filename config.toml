@@ -260,7 +260,7 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 
 [languages]
 [languages.en]
-title = "Kubernetes"
+title = "Bldyun"
 description = "Production-Grade Container Orchestration"
 languageName ="English"
 # Weight used for sorting.
@@ -269,7 +269,7 @@ contentDir = "content/en"
 languagedirection = "ltr"
 
 [languages.zh]
-title = "Kubernetes"
+title = "Bldyun"
 description = "生产级别的容器编排系统"
 languageName = "中文 Chinese"
 weight = 2
