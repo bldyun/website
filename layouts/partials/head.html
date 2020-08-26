@@ -41,10 +41,10 @@
   src="{{ "js/jquery-3.3.1.min.js" | relURL }}"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-{{ if and (.Site.Params.offlineSearch) (not .Site.Params.gcs_engine_id) }}
+<!-- {{ if and (.Site.Params.offlineSearch) (not .Site.Params.gcs_engine_id) }} -->
 <script src="https://unpkg.com/lunr@2.1.6/lunr.js"></script>
 <script src="/js/offline-search.js"></script>
-{{end}}
+<!-- {{end}} -->
 {{ partial "hooks/head-end.html" . }}
 
 <!-- Docsy head.html ends here -->
