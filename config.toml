@@ -145,9 +145,9 @@ announcement_bg = "#000000" #choose a dark color – text is white
 # algolia_docsearch = true
 
 # Enable Lunr.js offline search
-offlineSearch = true
-offlineSearchSummaryLength = 70
-offlineSearchMaxResults = 10
+#offlineSearch = false
+#offlineSearchSummaryLength = 70
+#offlineSearchMaxResults = 10
 
 
 [params.pushAssets]
