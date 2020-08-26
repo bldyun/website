@@ -5,14 +5,6 @@
   <hr/>
 
   <div class="issue-button-container">
-    {{ if and (not .Params.showcommit) $.GitInfo }}
-
-        {{ T "main_page_last_modified_on" }}
-        {{ .GitInfo.AuthorDate.Format "January 02, 2006 at 3:04 PM PST" }}
-        {{ T "main_by" }}
-        <a href="{{ site.Params.githubWebsiteRepo }}/commit/{{ .GitInfo.Hash }}/">{{ .GitInfo.AuthorName }}</a>
-        (<a href="{{ site.Params.githubWebsiteRepo }}/commits/master/content/en/{{ .File.Path }}">{{ T "main_page_history" }}</a>)
-    {{ end }}
     {{ if and (ne .Kind "404") (not (strings.Contains .Path "search")) }}
       {{ if not .Params.no_issue }}
         <script type="text/javascript">
@@ -45,4 +37,14 @@
       {{ end }}
     {{ end }}
   </div>
+  {{ if and (not .Params.showcommit) $.GitInfo }}
+
+    <div class="lastedit issue-button-container" id="lastedit">
+      {{ T "main_page_last_modified_on" }}
+      {{ .GitInfo.AuthorDate.Format "January 02, 2006 at 3:04 PM PST" }}
+      {{ T "main_by" }}
+      <a href="{{ site.Params.githubWebsiteRepo }}/commit/{{ .GitInfo.Hash }}/">{{ .GitInfo.Subject }}</a>
+      (<a href="{{ site.Params.githubWebsiteRepo }}/commits/master/content/en/{{ .File.Path }}">{{ T "main_page_history" }}</a>)
+    </div>
+  {{ end }}
 {{/*</div>*/}}

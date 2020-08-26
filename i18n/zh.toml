@@ -123,7 +123,7 @@ other = "感谢反馈。如果您有一个关于如何使用 Kubernetes 的特�
 other = "检索结果中.."
 
 [main_by]
-other = "由："
+other = "由 "
 
 [main_cncf_project]
 other = """我们是 <a href="https://cncf.io/">CNCF</a> 毕业项目</p>"""
@@ -141,7 +141,7 @@ other = """Bldyun&reg;。保留所有权利。已注册并使用商标。如需�
 other = """The Bldyun 作者 | 文档发布基于 <a href="https://doc.bldyun.com/website/LICENSE" class="light-text">CC BY 4.0</a> 授权许可"""
 
 [main_edit_this_page]
-other = "修改本页面"
+other = "修改本页"
 
 [main_github_create_an_issue]
 other = "报告 GitHub 问题"
@@ -168,7 +168,7 @@ other = "订阅"
 other ="页面历史"
 
 [main_page_last_modified_on]
-other = "页面最后一次修改于"
+other = "最近更新时间 "
 
 [main_read_about]
 other = "了解"
