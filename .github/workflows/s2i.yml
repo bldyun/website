@@ -38,9 +38,9 @@ jobs:
           export K8S_AUTOCD='${{ secrets.K8S_AUTOCD }}'
           export K8S_DOMAIN_INTERNAL='${{ secrets.K8S_DOMAIN_INTERNAL }}'
           export K8S_DOMAIN_PUBLIC='${{ secrets.K8S_DOMAIN_PUBLIC }}'
-          export K8S_KUBECONFIG_RAW='${{ secrets.K8S_KUBECONFIG_RAW }}'
+          export K8S_KUBECONFIG_BASE64='${{ secrets.K8S_KUBECONFIG_BASE64 }}'
           export K8S_NS='${{ secrets.K8S_NS }}'
-          
+
           git clone --depth=1 https://github.com/chimeh/cicd-s2e-runner.git
           export PATH=${PATH}:${PWD}/cicd-s2e-runner/s2e
           ls -lh ${PWD}/cicd-s2e-runner/s2e
